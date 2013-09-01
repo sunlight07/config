@@ -1,0 +1,10 @@
+[user]
+	name = Yu Jiang
+	email = sunlightt07@gmail.com
+[color]
+	ui = true
+[core]
+	editor = vim
+	autocrlf = input
+[help]
+	autocorrect = -1
