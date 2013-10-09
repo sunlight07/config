@@ -14,8 +14,8 @@ ZSH_THEME="gentoo"
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
-# Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+# Uncomment this to disable bi-weekly auto-update checks
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
@@ -27,7 +27,7 @@ ZSH_THEME="gentoo"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
+DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
@@ -40,15 +40,15 @@ ZSH_THEME="gentoo"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(svn git)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-alias ipv6='python3 /home/sunlight/Desktop/goagent-ipv6/local/proxy.py'
-alias nov6='python3 /home/sunlight/Desktop/goagent-nov6/local/proxy.py'
-
-alias rm='rm -I'
-
 alias make='make -j8'
 alias makec='make clean && make'
+
+alias gcc='gcc-4.7'
+alias g++='g++-4.7'
+
+export LC_ALL=C
 
