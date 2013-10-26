@@ -2,15 +2,23 @@
 
 cd `dirname $0`
 
-rm -rf ~/.vim
 rm -rf ~/.oh-my-zsh
-cp -r vim ~/.vim
 cp -r oh-my-zsh ~/.oh-my-zsh
 
-cp vimrc ~/.vimrc
 cp zshrc ~/.zshrc
 cp bashrc ~/.bashrc
 cp gitconfig ~/.gitconfig
 
-echo "success!"
+rm -rf ~/.vim
+mkdir -p ~/.vim/bundle
+cp -r ./vundle ~/.vim/bundle/
+cp ./ycm_extra_conf.py ~/.ycm_extra_conf.py
+
+cp vimrc ~/.vimrc
+vim +BundleInstall +qall
+cd ~/.vim/bundle/YouCompleteMe
+./install.sh --clang-completer
+cd -
+
+echo "done!"
 

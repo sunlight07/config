@@ -1,8 +1,2 @@
 vimrc:
-	last updated: 2013/10/25
-vim plugin list:
-	nerdtree: https://github.com/scrooloose/nerdtree
-	minibufexpl: https://github.com/fholgado/minibufexpl.vim
-	youcompleteme: https://github.com/Valloric/YouCompleteMe
-	cpp11: https://github.com/vim-scripts/Cpp11-Syntax-Support
-	tcomment: https://github.com/tomtom/tcomment_vim
+	last updated: 2013/10/26
