@@ -7,8 +7,10 @@ alias ll='ls -l'
 alias make='make -j8'
 alias makec='make clean && make'
 
-alias gcc='gcc-4.7'
-alias g++='g++-4.7'
+alias gcc='gcc-4.8'
+alias g++='g++-4.8'
 
-export LC_ALL=C
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 

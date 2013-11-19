@@ -40,15 +40,17 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git z)
 
 source $ZSH/oh-my-zsh.sh
 
 alias make='make -j8'
 alias makec='make clean && make'
 
-alias gcc='gcc-4.7'
-alias g++='g++-4.7'
+alias gcc='gcc-4.8'
+alias g++='g++-4.8'
 
-export LC_ALL=C
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 

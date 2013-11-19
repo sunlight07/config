@@ -10,15 +10,17 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'tomtom/tcomment_vim'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'bling/vim-airline'
 
 colorscheme desert "set colorscheme
 let mapleader = ";" "set leader for future use
 
 set ru "display ruler
 set nu "display line number
+set rnu "display line number
 set sc "show uncomplete command
 set sm "show the match parenthesis
 set bs=2 "allow backspace to delete
@@ -47,6 +49,17 @@ highlight SpecialKey ctermfg=240
 "for remove unwanted whitespaces
 autocmd FileType c,cpp,java autocmd BufWritePre <buffer> :%s/\s\+$//e
 
+"for NERDTree
+nmap <leader>v :NERDTree<enter>
+
+"for tComment
+vmap <leader>c :TComment<enter>
+nmap <leader>c :TComment<enter>
+
+"for minibufexplorer
+let g:miniBufExplMapWindowNavArrows = 1
+nmap <c-t> :bn<enter>
+
 "for YouCompleteMe
 highlight Pmenu	   ctermfg=255 ctermbg=20
 highlight PmenuSel ctermfg=198 ctermbg=20
@@ -54,14 +67,6 @@ let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_confirm_extra_conf = 0
 set completeopt=menuone
 
-"for NERDTree plugin
-nmap <leader>v :NERDTree<enter>
-
-"for tComment plugin
-vmap <leader>c :TComment<enter>
-nmap <leader>c :TComment<enter>
-
-"for minibufexplorer plugin
-let g:miniBufExplMapWindowNavArrows = 1
-nmap <c-t> :bn<enter>
+"for vim-airline
+set laststatus=2
 

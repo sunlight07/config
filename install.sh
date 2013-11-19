@@ -17,7 +17,7 @@ cp ./ycm_extra_conf.py ~/.ycm_extra_conf.py
 cp vimrc ~/.vimrc
 vim +BundleInstall +qall
 cd ~/.vim/bundle/YouCompleteMe
-./install.sh --clang-completer
+./install.sh --clang-completer --system-libclang
 cd -
 
 echo "done!"
