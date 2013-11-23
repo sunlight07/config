@@ -20,7 +20,6 @@ let mapleader = ";" "set leader for future use
 
 set ru "display ruler
 set nu "display line number
-set rnu "display line number
 set sc "show uncomplete command
 set sm "show the match parenthesis
 set bs=2 "allow backspace to delete
