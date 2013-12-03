@@ -20,5 +20,7 @@ cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
 cd -
 
+mkdir -p ~/.vim/undodir
+
 echo "done!"
 

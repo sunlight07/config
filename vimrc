@@ -25,7 +25,7 @@ set sm "show the match parenthesis
 set bs=2 "allow backspace to delete
 set mouse=a "allow to use mouse
 
-set whichwrap+=<,>,b,s "allow move between lines
+set whichwrap=<,>,[,],b,s "allow move between lines
 set backspace=eol,start,indent "extend backspace
 
 set ignorecase "ignore case, please notice the next option
@@ -33,6 +33,15 @@ set smartcase "ignore case when the pattern only contains small letters
 set hls "highlight all the items which match search pattern
 set is "open incsearch, do searching along with typing
 nmap <leader>s :nohlsearch<enter>
+
+map <Up> gk
+map <Down> gj
+imap <Up> <C-o>gk
+imap <Down> <C-o>gj
+
+"for persistent undo
+set undofile
+set undodir=/home/sunlight/.vim/undodir
 
 "for different filetype
 filetype plugin indent on

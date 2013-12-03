@@ -4,7 +4,7 @@ alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -l'
 
-alias make='make -j8'
+alias make='make -j16'
 alias makec='make clean && make'
 
 alias gcc='gcc-4.8'
