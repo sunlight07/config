@@ -55,7 +55,7 @@ set listchars=tab:>\ ,trail:.
 highlight SpecialKey ctermfg=240
 
 "for remove unwanted whitespaces
-autocmd FileType c,cpp,java autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,java,python,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 "for NERDTree
 nmap <leader>v :NERDTree<enter>
