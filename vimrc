@@ -1,4 +1,4 @@
-﻿set t_Co=256
+set t_Co=256
 
 syntax on
 filetype off
@@ -47,7 +47,8 @@ set undodir=/home/sunlight/.vim/undodir
 filetype plugin indent on
 set ts=4 | set sw=4 | set si
 autocmd FileType c,cpp,java set ts=4 | set sw=4 | set si
-autocmd FileType html,js,css,ruby set ts=2 | set sw=2 | set si | set et | set sta
+autocmd FileType html,htmldjango,javascript,css set ts=2 | set sw=2 | set si | set et | set sta
+autocmd FileType python,ruby set ts=4 | set sw=4 | set si | set et | set sta
 
 "for display tab
 set list
@@ -55,7 +56,7 @@ set listchars=tab:>\ ,trail:.
 highlight SpecialKey ctermfg=240
 
 "for remove unwanted whitespaces
-autocmd FileType c,cpp,java,python,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,java,python,ruby,html,javascript,css,bib,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 "for NERDTree
 nmap <leader>v :NERDTree<enter>
