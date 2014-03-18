@@ -3,6 +3,7 @@ set t_Co=256
 syntax on
 filetype off
 set nocompatible
+set noswapfile
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
