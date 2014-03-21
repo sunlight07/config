@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+ZSH=/home/sunlight/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -11,13 +11,13 @@ ZSH_THEME="gentoo"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Set to this to use case-sensitive completion
+# Set this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
 # Uncomment this to disable bi-weekly auto-update checks
 DISABLE_AUTO_UPDATE="true"
 
-# Uncomment to change how often before auto-updates occur? (in days)
+# Uncomment to change how often to auto-update? (in days)
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment following line if you want to disable colors in ls
@@ -37,12 +37,22 @@ DISABLE_CORRECTION="true"
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# Uncomment following line if you want to the command execution time stamp shown 
+# in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export MANPATH="/usr/local/man:$MANPATH"
 
 alias make='make -j16'
 alias makec='make clean && make'
@@ -53,4 +63,31 @@ alias g++='g++-4.8'
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+alias nl='nl -s " " -w 1'
+
+alias -s c=vi
+alias -s h=vi
+alias -s cpp=vi
+alias -s cc=vi
+alias -s java=vi
+alias -s py=vi
+alias -s rb=vi
+alias -s js=vi
+alias -s html=vi
+alias -s css=vi
+
+alias -s gz='tar xf'
+alias -s bz2='tar xf'
+alias -s tar='tar xf'
+alias -s zip='unzip -d'
+alias -s rar='unrar x'
+
+sudo-command-line() {
+	[[ -z $BUFFER ]] && zle up-history
+	[[ $BUFFER != sudo\ * ]] && BUFFER="sudo $BUFFER"
+	zle end-of-line
+}
+zle -N sudo-command-line
+bindkey "\e\e" sudo-command-line
 
