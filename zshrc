@@ -66,21 +66,10 @@ export LC_ALL=en_US.UTF-8
 
 alias nl='nl -s " " -w 1'
 
-alias -s c=vi
-alias -s h=vi
-alias -s cpp=vi
-alias -s cc=vi
-alias -s java=vi
-alias -s py=vi
-alias -s rb=vi
-alias -s js=vi
-alias -s html=vi
-alias -s css=vi
-
 alias -s gz='tar xf'
 alias -s bz2='tar xf'
 alias -s tar='tar xf'
-alias -s zip='unzip -d'
+alias -s zip='unzip -x'
 alias -s rar='unrar x'
 
 sudo-command-line() {
@@ -90,4 +79,3 @@ sudo-command-line() {
 }
 zle -N sudo-command-line
 bindkey "\e\e" sudo-command-line
-
