@@ -47,9 +47,9 @@ set undodir=/home/sunlight/.vim/undodir
 "for different filetype
 filetype plugin indent on
 set ts=4 | set sw=4 | set si
-autocmd FileType c,cpp,java set ts=4 | set sw=4 | set si
-autocmd FileType html,htmldjango,javascript,css set ts=2 | set sw=2 | set si | set et | set sta
-autocmd FileType python,ruby set ts=4 | set sw=4 | set si | set et | set sta
+" autocmd FileType c,cpp,java set ts=4 | set sw=4 | set si
+" autocmd FileType html,htmldjango,javascript,css set ts=2 | set sw=2 | set si | set et | set sta
+" autocmd FileType python,ruby set ts=4 | set sw=4 | set si | set et | set sta
 
 "for display tab
 set list
@@ -57,18 +57,19 @@ set listchars=tab:>\ ,trail:.
 highlight SpecialKey ctermfg=240
 
 "for remove unwanted whitespaces
-autocmd FileType c,cpp,java,python,ruby,html,javascript,css,bib,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,java,python,ruby,html,javascript,css,bib,tex,php autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 "for NERDTree
-nmap <leader>v :NERDTree<enter>
+noremap <leader>v :NERDTree<enter>
 
 "for tComment
-vmap <leader>c :TComment<enter>
-nmap <leader>c :TComment<enter>
+noremap <leader>c :TComment<enter>
 
 "for minibufexplorer
 let g:miniBufExplMapWindowNavArrows = 1
-nmap <c-t> :bn<enter>
+noremap <c-t> :bn<enter>
+noremap h :bp<enter>
+noremap l :bn<enter>
 
 "for YouCompleteMe
 highlight Pmenu	   ctermfg=255 ctermbg=20
@@ -80,3 +81,5 @@ set completeopt=menuone
 "for vim-airline
 set laststatus=2
 
+"i am a geek
+noremap L <c-w><c-w>
