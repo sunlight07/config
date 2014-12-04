@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=/home/sunlight/.oh-my-zsh
+ZSH=/Users/sunlight/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -45,20 +45,18 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+fpath=(/usr/local/share/zsh-completions $fpath)
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 export MANPATH="/usr/local/man:$MANPATH"
 
-alias make='make -j16'
+alias make='make -j4'
 alias makec='make clean && make'
-
-alias gcc='gcc-4.8'
-alias g++='g++-4.8'
 
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -79,3 +77,6 @@ sudo-command-line() {
 }
 zle -N sudo-command-line
 bindkey "\e\e" sudo-command-line
+
+# perl -E ' print "\e[?1005h\e[?1002h" '
+

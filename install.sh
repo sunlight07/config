@@ -11,11 +11,11 @@ cp gitconfig ~/.gitconfig
 
 rm -rf ~/.vim
 mkdir -p ~/.vim/bundle
-cp -r ./vundle ~/.vim/bundle/
+cp -r ./vundle ~/.vim/bundle/Vundle.vim
 cp ./ycm_extra_conf.py ~/.ycm_extra_conf.py
 
 cp vimrc ~/.vimrc
-vim +BundleInstall +qall
+vim +PluginInstall +qall
 cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
 cd -
