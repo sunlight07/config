@@ -47,7 +47,7 @@ imap <Down> <C-o>gj
 
 "for persistent undo
 set undofile
-set undodir=/home/sunlight/.vim/undodir
+set undodir=~/.vim/undodir
 
 "for different filetype
 filetype plugin indent on
