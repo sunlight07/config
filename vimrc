@@ -19,6 +19,9 @@ Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
 
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'rizzatti/dash.vim'
+
 call vundle#end()
 
 colorscheme desert "set colorscheme
@@ -66,6 +69,7 @@ autocmd FileType c,cpp,java,python,ruby,html,javascript,css,bib,tex,php autocmd 
 
 "for NERDTree
 noremap <leader>v :NERDTree<enter>
+let NERDTreeIgnore = ["\.pyc$", "\.o$"]
 
 "for tComment
 noremap <leader>c :TComment<enter>
@@ -85,6 +89,10 @@ set completeopt=menuone
 
 "for vim-airline
 set laststatus=2
+
+"for dash
+noremap <leader>k :Dash<enter>
+noremap <leader>K :Dash!<enter>
 
 "i am a geek
 noremap L <c-w><c-w>
