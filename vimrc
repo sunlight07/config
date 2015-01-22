@@ -5,7 +5,7 @@ filetype off
 set nocompatible
 set noswapfile
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
 Plugin 'gmarik/vundle'
@@ -65,7 +65,8 @@ set listchars=tab:>\ ,trail:.
 highlight SpecialKey ctermfg=240
 
 "for remove unwanted whitespaces
-autocmd FileType c,cpp,java,python,ruby,html,javascript,css,bib,tex,php autocmd BufWritePre <buffer> :%s/\s\+$//e
+" autocmd FileType c,cpp,java,python,ruby,html,javascript,css,bib,tex,php autocmd BufWritePre <buffer> :%s/\s\+$//e
+" autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 "for NERDTree
 noremap <leader>v :NERDTree<enter>
