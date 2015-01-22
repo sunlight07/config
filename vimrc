@@ -12,7 +12,7 @@ Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'fholgado/minibufexpl.vim'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'bling/vim-airline'
 
@@ -54,10 +54,14 @@ set undodir=~/.vim/undodir
 
 "for different filetype
 filetype plugin indent on
-set ts=4 | set sw=4 | set si
-" autocmd FileType c,cpp,java set ts=4 | set sw=4 | set si
-" autocmd FileType html,htmldjango,javascript,css set ts=2 | set sw=2 | set si | set et | set sta
-" autocmd FileType python,ruby set ts=4 | set sw=4 | set si | set et | set sta
+" http://vim.wikia.com/wiki/Indenting_source_code
+" without tabs:
+set et sw=4 sts=4 si sta
+" with tabs:
+" set sw=4 ts=4 si
+" autocmd FileType c,cpp,java set sw=4 ts=4 si
+" autocmd FileType html,htmldjango,javascript,css set et sw=4 sts=4 si sta
+" autocmd FileType python,ruby,php set et sw=4 sts=4 si sta
 
 "for display tab
 set list
