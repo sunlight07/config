@@ -12,10 +12,12 @@ Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'fholgado/minibufexpl.vim'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'bling/vim-airline'
 
+Plugin 'rking/ag.vim'
+Plugin 'kien/ctrlp.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
 
@@ -54,6 +56,7 @@ set undodir=~/.vim/undodir
 
 "for different filetype
 filetype plugin indent on
+set ts=4
 " http://vim.wikia.com/wiki/Indenting_source_code
 " without tabs:
 set et sw=4 sts=4 si sta
@@ -70,7 +73,7 @@ highlight SpecialKey ctermfg=240
 
 "for remove unwanted whitespaces
 " autocmd FileType c,cpp,java,python,ruby,html,javascript,css,bib,tex,php autocmd BufWritePre <buffer> :%s/\s\+$//e
-" autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 "for NERDTree
 noremap <leader>v :NERDTree<enter>
@@ -91,6 +94,9 @@ highlight PmenuSel ctermfg=198 ctermbg=20
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_confirm_extra_conf = 0
 set completeopt=menuone
+
+"for ag
+highlight Search ctermfg=255 ctermbg=20
 
 "for vim-airline
 set laststatus=2
