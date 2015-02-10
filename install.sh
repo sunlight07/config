@@ -11,7 +11,7 @@ cp gitconfig ~/.gitconfig
 
 rm -rf ~/.vim
 mkdir -p ~/.vim/bundle
-cp -r ./vundle ~/.vim/bundle/vundle
+cp -r ./vundle ~/.vim/bundle/Vundle.vim
 cp ./ycm_extra_conf.py ~/.ycm_extra_conf.py
 
 cp vimrc ~/.vimrc

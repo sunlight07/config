@@ -5,10 +5,10 @@ filetype off
 set nocompatible
 set noswapfile
 
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'fholgado/minibufexpl.vim'
@@ -21,6 +21,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
 
+Plugin 'alvan/vim-closetag'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'rizzatti/dash.vim'
 
@@ -108,3 +109,7 @@ noremap <leader>K :Dash!<enter>
 " other settings
 noremap L <c-w><c-w>
 let g:syntastic_python_flake8_args="--ignore=E501"
+
+" spf13
+set virtualedit=onemore
+cmap w!! w !sudo tee % >/dev/null
