@@ -7,5 +7,5 @@
 	editor = vim
 	autocrlf = input
 [help]
-	autocorrect = -1
+	autocorrect = 3
 
