@@ -98,8 +98,6 @@ let g:miniBufExplMapWindowNavArrows=1
 noremap <c-t> :bn<enter>
 
 " for YouCompleteMe
-highlight Pmenu	   ctermfg=255 ctermbg=20
-highlight PmenuSel ctermfg=198 ctermbg=20
 let g:ycm_min_num_of_chars_for_completion=1
 let g:ycm_confirm_extra_conf=0
 set completeopt=menuone
