@@ -6,6 +6,7 @@ cp zshrc ~/.zshrc
 cp bashrc ~/.bashrc
 cp gitconfig ~/.gitconfig
 cp ycm_extra_conf.py ~/.ycm_extra_conf.py
+cp tmux.conf ~/.tmux.conf
 cp vimrc ~/.vimrc
 
 rm -rf ~/.oh-my-zsh
