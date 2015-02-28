@@ -15,20 +15,31 @@ Plugin 'fholgado/minibufexpl.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'bling/vim-airline'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
 
-Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'kshenoy/vim-signature'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-expand-region'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
+Plugin 'rking/ag.vim'
 
-Plugin 'alvan/vim-closetag'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'alvan/vim-closetag'
 Plugin 'rizzatti/dash.vim'
 
 call vundle#end()
 
-colorscheme desert " set colorscheme
-let mapleader = ";" " set leader for future use
+set background=dark
+try
+    colorscheme solarized " set colorscheme
+catch /^Vim\%((\a\+)\)\=:E185/
+    colorscheme desert " backup colorscheme
+endtry
+
+let mapleader=";" " set leader for future use
 
 set ru " display ruler
 set nu " display line number
@@ -70,7 +81,6 @@ set et sw=4 sts=4 si sta
 " for display tab
 set list
 set listchars=tab:>\ ,trail:.
-highlight SpecialKey ctermfg=240
 
 " for remove unwanted whitespaces
 " autocmd FileType c,cpp,java,python,ruby,html,javascript,css,bib,tex,php autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -78,29 +88,28 @@ autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " for NERDTree
 noremap <leader>v :NERDTree<enter>
-let NERDTreeIgnore = ["\.pyc$", "\.o$"]
+let NERDTreeIgnore=["\.pyc$", "\.o$"]
 
 " for tComment
 noremap <leader>c :TComment<enter>
 
 " for minibufexplorer
-let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapWindowNavArrows=1
 noremap <c-t> :bn<enter>
-noremap h :bp<enter>
-noremap l :bn<enter>
 
 " for YouCompleteMe
 highlight Pmenu	   ctermfg=255 ctermbg=20
 highlight PmenuSel ctermfg=198 ctermbg=20
-let g:ycm_min_num_of_chars_for_completion = 1
-let g:ycm_confirm_extra_conf = 0
+let g:ycm_min_num_of_chars_for_completion=1
+let g:ycm_confirm_extra_conf=0
 set completeopt=menuone
-
-" for ag
-highlight Search ctermfg=255 ctermbg=20
 
 " for vim-airline
 set laststatus=2
+
+" for vim-expand-region
+map h <Plug>(expand_region_shrink)
+map l <Plug>(expand_region_expand)
 
 " for dash
 noremap <leader>k :Dash<enter>
@@ -108,7 +117,7 @@ noremap <leader>K :Dash!<enter>
 
 " other settings
 noremap L <c-w><c-w>
-let g:syntastic_python_flake8_args="--ignore=E501"
+let g:syntastic_python_flake8_args="--ignore=E501,F403"
 
 " spf13
 set virtualedit=onemore

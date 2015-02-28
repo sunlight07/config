@@ -2,25 +2,22 @@
 
 cd `dirname $0`
 
-rm -rf ~/.oh-my-zsh
-cp -r oh-my-zsh ~/.oh-my-zsh
-
 cp zshrc ~/.zshrc
 cp bashrc ~/.bashrc
 cp gitconfig ~/.gitconfig
+cp ycm_extra_conf.py ~/.ycm_extra_conf.py
+cp vimrc ~/.vimrc
+
+rm -rf ~/.oh-my-zsh
+git clone --depth=1 git@github.com:robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 rm -rf ~/.vim
 mkdir -p ~/.vim/bundle
-cp -r ./vundle ~/.vim/bundle/Vundle.vim
-cp ./ycm_extra_conf.py ~/.ycm_extra_conf.py
+mkdir -p ~/.vim/undodir
+git clone --depth=1 git@github.com:gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-cp vimrc ~/.vimrc
 vim +PluginInstall +qall
 cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
-cd -
-
-mkdir -p ~/.vim/undodir
 
 echo "done!"
-

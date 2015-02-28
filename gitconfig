@@ -1,11 +1,10 @@
 [user]
-	name = Yu Jiang
-	email = sunlight.thu@gmail.com
+    name = Yu Jiang
+    email = sunlight.thu@gmail.com
 [color]
-	ui = true
+    ui = true
 [core]
-	editor = vim
-	autocrlf = input
+    editor = vim
+    autocrlf = input
 [help]
-	autocorrect = 3
-
+    autocorrect = 3
