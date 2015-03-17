@@ -12,7 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'fholgado/minibufexpl.vim'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
@@ -26,6 +26,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rking/ag.vim'
 
+Plugin 'derekwyatt/vim-scala'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'alvan/vim-closetag'
 Plugin 'rizzatti/dash.vim'
@@ -115,7 +116,8 @@ noremap <leader>K :Dash!<enter>
 
 " other settings
 noremap L <c-w><c-w>
-let g:syntastic_python_flake8_args="--ignore=E501,F403"
+let g:syntastic_python_flake8_args="--ignore=E501,E402,F403"
+let g:ycm_path_to_python_interpreter = '/Users/sunlight/.pyenv/shims/python'
 
 " spf13
 set virtualedit=onemore
