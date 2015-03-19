@@ -46,8 +46,12 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 export PATH="$HOME/db_oj/script:$PATH"
-export PYTHONPATH="$HOME/db_oj/common/lib:$PYTHONPATH"
+export PYTHONPATH="$HOME/db_oj/common/lib:$HOME/db_oj/frontend:$PYTHONPATH"
 export PATH="$HOME/postgresql/install/bin:$PATH"
 
 alias gcc='gcc-4.9'
 alias g++='g++-4.9'
+
+export PATH="/usr/texbin:$PATH"
+alias updatedb='/usr/libexec/locate.updatedb'
+alias ag='ag -U'
