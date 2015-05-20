@@ -3,7 +3,7 @@ ZSH_THEME="gentoo"
 DISABLE_AUTO_UPDATE="true"
 DISABLE_CORRECTION="true"
 
-plugins=(git django zsh-syntax-highlighting)
+plugins=(git django zsh-syntax-highlighting make z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -28,9 +28,6 @@ alias -s zip='unzip -x'
 alias -s rar='unrar x'
 alias -s 7z='7z x'
 
-alias ggrebase='git pull --rebase origin $(current_branch)'
-alias ggpp='ggrebase && ggpush'
-
 sudo-command-line() {
 	[[ -z $BUFFER ]] && zle up-history
 	[[ $BUFFER != sudo\ * ]] && BUFFER="sudo $BUFFER"
@@ -45,13 +42,12 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-export PATH="$HOME/db_oj/script:$PATH"
+export PATH="/usr/texbin:$HOME/db_oj/script:$PATH"
 export PYTHONPATH="$HOME/db_oj/common/lib:$HOME/db_oj/frontend:$PYTHONPATH"
-export PATH="$HOME/postgresql/install/bin:$PATH"
 
+alias updatedb='/usr/libexec/locate.updatedb'
+alias mm='mosh 166.111.71.207 -- tmux'
+alias mz='mosh 166.111.71.172 -- tmux'
 alias gcc='gcc-4.9'
 alias g++='g++-4.9'
-
-export PATH="/usr/texbin:$PATH"
-alias updatedb='/usr/libexec/locate.updatedb'
 alias ag='ag -U'

@@ -62,8 +62,8 @@ nmap <leader>s :nohlsearch<enter>
 
 map <Up> gk
 map <Down> gj
-imap <Up> <C-o>gk
-imap <Down> <C-o>gj
+" imap <Up> <C-o>gk
+" imap <Down> <C-o>gj
 
 " for persistent undo
 set undofile
@@ -119,7 +119,7 @@ noremap <leader>K :Dash!<enter>
 " other settings
 noremap L <c-w><c-w>
 let g:syntastic_python_flake8_args="--ignore=E501,E402,F403"
-let g:ycm_path_to_python_interpreter='/usr/bin/python'
+let g:ycm_path_to_python_interpreter="~/.pyenv/versions/2.7.9/bin/python2.7"
 let g:jedi#completions_command="<C-c>"
 let g:jedi#popup_on_dot=0
 autocmd FileType python setlocal completeopt-=preview
@@ -127,3 +127,5 @@ autocmd FileType python setlocal completeopt-=preview
 " spf13
 set virtualedit=onemore
 cmap w!! w !sudo tee % >/dev/null
+
+set so=2
