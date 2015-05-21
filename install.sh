@@ -18,6 +18,6 @@ mkdir -p ~/.vim/undodir
 git clone --depth=1 git@github.com:gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 vim +PluginInstall +qall
-~/.vim/bundle/YouCompleteMe/install.sh --clang-completer
+# ~/.vim/bundle/YouCompleteMe/install.sh --clang-completer
 
 echo "done!"
