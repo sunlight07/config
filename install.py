@@ -68,14 +68,14 @@ if REMOTE:
           get_input = raw_input
         else:
           get_input = input
-        admin_scripts = raw_input("admin_scripts_path(do not include trailing '/'): ")
+        admin_scripts = get_input("admin_scripts_path(do not include trailing '/'): ")
     log0("admin_scripts: %s" % admin_scripts)
 
 shell("git checkout -- zshrc")
 shell("git checkout -- bashrc")
 shell("sed -i %s-e 's/__sed_here_plz__/export IS_REMOTE=%d/g' bashrc zshrc" % (MACOS and "'' " or "", REMOTE and 1 or 0))
 if REMOTE:
-    shell("sed -i %s-e 's/$ADMIN_SCRIPTS/%s/g' bashrc zshrc" % (MACOS and "'' " or "", admin_scripts))
+    shell("sed -i %s-e 's/$ADMIN_SCRIPTS/%s/g' bashrc zshrc vimrc" % (MACOS and "'' " or "", admin_scripts.replace("/", "\/")))
 
 copy_to_home_dir("zshrc")
 copy_to_home_dir("bashrc")
@@ -99,9 +99,9 @@ mk_dir(HOME_DIR + ".vim/undodir")
 shell("git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim")
 
 shell("vim +PluginInstall +qall")
-if not REMOTE:
-    shell("~/.vim/bundle/YouCompleteMe/install.py --clang-completer")
-else:
+if REMOTE:
     log0("please create the undodir for vim!")
+else:
+    shell("~/.vim/bundle/YouCompleteMe/install.py --clang-completer")
 
 log0("finished!")
