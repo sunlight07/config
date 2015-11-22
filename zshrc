@@ -1,3 +1,9 @@
+__sed_here_plz__
+
+if [ $IS_REMOTE = 1 ]; then
+  source "$ADMIN_SCRIPTS/master.zshrc"
+fi
+
 ZSH=~/.oh-my-zsh
 ZSH_THEME="gentoo"
 DISABLE_AUTO_UPDATE="true"
@@ -22,26 +28,10 @@ sudo-command-line() {
 zle -N sudo-command-line
 bindkey "\e\e" sudo-command-line
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-export PATH="/usr/texbin:$HOME/db_oj/script:$PATH"
-export PYTHONPATH="$HOME/db_oj/common/lib:$HOME/db_oj/frontend:$PYTHONPATH"
-
 alias -s gz='tar xf'
 alias -s bz2='tar xf'
 alias -s tar='tar xf'
 alias -s zip='unzip -x'
 alias -s rar='unrar x'
 alias -s 7z='7z x'
-
-alias gcc='gcc-5'
-alias g++='g++-5'
-alias make='make -j4'
-alias makeclean='make clean && make'
-alias updatedb='/usr/libexec/locate.updatedb'
-alias nl='nl -s " " -w 4'
-alias ag='ag -U'
+alias vi='vim'

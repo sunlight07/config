@@ -1,3 +1,10 @@
+__sed_here_plz__
+
+if [ $IS_REMOTE = 1 ]; then
+  source "$ADMIN_SCRIPTS/master.bashrc"
+fi
+
+alias vi='vim'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias la='ls -a'
