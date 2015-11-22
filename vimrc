@@ -17,9 +17,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'fholgado/minibufexpl.vim'
 if $IS_REMOTE
-    Plugin 'vim-scripts/AutoComplPop'
+  Plugin 'vim-scripts/AutoComplPop'
 else
-    Plugin 'Valloric/YouCompleteMe'
+  Plugin 'Valloric/YouCompleteMe'
 endif
 Plugin 'tomtom/tcomment_vim'
 Plugin 'bling/vim-airline'
@@ -31,23 +31,23 @@ Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'terryma/vim-expand-region'
 if $IS_REMOTE
-    Plugin 'safetydank/vim-gitgutter'
+  Plugin 'safetydank/vim-gitgutter'
 else
-    Plugin 'airblade/vim-gitgutter'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'rking/ag.vim'
+  Plugin 'airblade/vim-gitgutter'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'rking/ag.vim'
 
-    Plugin 'kchmck/vim-coffee-script'
-    Plugin 'rizzatti/dash.vim'
+  Plugin 'kchmck/vim-coffee-script'
+  Plugin 'rizzatti/dash.vim'
 endif
 
 call vundle#end()
 
 set background=dark
 try
-    colorscheme solarized " set colorscheme
+  colorscheme solarized " set colorscheme
 catch /^Vim\%((\a\+)\)\=:E185/
-    colorscheme desert " backup colorscheme
+  colorscheme desert " backup colorscheme
 endtry
 
 let mapleader=";" " set leader for future use
@@ -93,10 +93,6 @@ set et sw=2 sts=2 si sta
 " autocmd FileType html,htmldjango,javascript,css set et sw=2 sts=2 si sta
 " autocmd FileType python,ruby,php set et sw=2 sts=2 si sta
 
-if $IS_REMOTE
-  set ts=2 et sw=2 sts=2 si sta
-endif
-
 " for display tab
 set list
 set listchars=tab:>\ ,trail:.
@@ -133,8 +129,8 @@ map l <Plug>(expand_region_expand)
 
 " for dash
 if !$IS_REMOTE
-    noremap <leader>k :Dash<enter>
-    noremap <leader>K :Dash!<enter>
+  noremap <leader>k :Dash<enter>
+  noremap <leader>K :Dash!<enter>
 endif
 
 " other settings

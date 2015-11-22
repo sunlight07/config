@@ -21,9 +21,9 @@ export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 sudo-command-line() {
-    [[ -z $BUFFER ]] && zle up-history
-    [[ $BUFFER != sudo\ * ]] && BUFFER="sudo $BUFFER"
-    zle end-of-line
+  [[ -z $BUFFER ]] && zle up-history
+  [[ $BUFFER != sudo\ * ]] && BUFFER="sudo $BUFFER"
+  zle end-of-line
 }
 zle -N sudo-command-line
 bindkey "\e\e" sudo-command-line
