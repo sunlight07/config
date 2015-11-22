@@ -36,21 +36,46 @@ def mk_dir(name):
   os.makedirs(name)
   log1("done")
 
+def check_output(*popenargs, **kwargs):
+    process = subprocess.Popen(stdout=subprocess.PIPE, *popenargs, **kwargs)
+    output, unused_err = process.communicate()
+    retcode = process.poll()
+    if retcode:
+        raise Exception("return code isn't 0!")
+    return output
+
 def shell(cmd):
   log1("executing '%s'..." % cmd)
-  log1(subprocess.check_output(cmd, shell=True))
+  log1(check_output(cmd, shell=True))
+
+def is_macos():
+  return sys.platform == "darwin"
 
 def is_remote():
-  return sys.platform != "darwin"
+  return not is_macos()
 
 FILE_DIR = os.path.dirname(os.path.abspath(__file__))
 os.chdir(FILE_DIR)
 
+MACOS = is_macos()
 REMOTE = is_remote()
+HOME_DIR = os.path.expanduser("~/")
+
+if REMOTE:
+    admin_scripts = os.environ.get("ADMIN_SCRIPTS")
+    if not admin_scripts:
+        if sys.version_info[:2] <= (2, 7):
+          get_input = raw_input
+        else:
+          get_input = input
+        admin_scripts = raw_input("admin_scripts_path(do not include trailing '/'): ")
+    log0("admin_scripts: %s" % admin_scripts)
+
 shell("git checkout -- zshrc")
 shell("git checkout -- bashrc")
-shell("sed -i '' -e 's/__sed_here_plz__/export IS_REMOTE=%d/g' bashrc zshrc" % (REMOTE and 1 or 0))
-HOME_DIR = os.path.expanduser("~/")
+shell("sed -i %s-e 's/__sed_here_plz__/export IS_REMOTE=%d/g' bashrc zshrc" % (MACOS and "'' " or "", REMOTE and 1 or 0))
+if REMOTE:
+    shell("sed -i %s-e 's/$ADMIN_SCRIPTS/%s/g' bashrc zshrc" % (MACOS and "'' " or "", admin_scripts))
 
 copy_to_home_dir("zshrc")
 copy_to_home_dir("bashrc")
@@ -65,6 +90,8 @@ else:
 rm_dir(HOME_DIR + ".oh-my-zsh")
 
 shell("git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh")
+if REMOTE:
+    shell("sed -i %s-e 's/green/red/g' ~/.oh-my-zsh/themes/gentoo.zsh-theme" % (MACOS and "'' " or ""))
 
 rm_dir(HOME_DIR + ".vim")
 mk_dir(HOME_DIR + ".vim/bundle")
