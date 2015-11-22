@@ -68,7 +68,7 @@ if REMOTE:
       get_input = raw_input
     else:
       get_input = input
-  admin_scripts = get_input("admin_scripts_path(do not include trailing '/'): ")
+    admin_scripts = get_input("admin_scripts_path(do not include trailing '/'): ")
   log0("admin_scripts: %s" % admin_scripts)
 
 shell("git checkout -- zshrc")
