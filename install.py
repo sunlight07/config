@@ -73,7 +73,7 @@ shell("git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bu
 
 shell("vim +PluginInstall +qall")
 if not REMOTE:
-    shell("~/.vim/bundle/YouCompleteMe/install.sh --clang-completer")
+    shell("~/.vim/bundle/YouCompleteMe/install.py --clang-completer")
 else:
     log0("please create the undodir for vim!")
 
