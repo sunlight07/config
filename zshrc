@@ -1,7 +1,7 @@
 __sed_here_plz__
 
 if [ $IS_REMOTE = 1 ]; then
-  source "/mnt/vol/engshare/admin/scripts/master.zshrc"
+  source "$ADMIN_SCRIPTS/master.zshrc"
   source "$ADMIN_SCRIPTS/scm-prompt"
 fi
 
@@ -41,7 +41,7 @@ if [ $IS_REMOTE = 1 ]; then
   setopt HIST_IGNORE_ALL_DUPS
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-  alias hhh='hphpd -h localhost'
+  alias hhhh='hphpd -h localhost'
   alias hhh2='hphpd -h localhost --debug-sandbox 2'
   alias hhh3='hphpd -h localhost --debug-sandbox 3'
 fi

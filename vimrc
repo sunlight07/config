@@ -16,29 +16,19 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'fholgado/minibufexpl.vim'
-if $IS_REMOTE
-  Plugin 'vim-scripts/AutoComplPop'
-else
-  Plugin 'Valloric/YouCompleteMe'
-endif
 Plugin 'tomtom/tcomment_vim'
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
-
-Plugin 'kien/ctrlp.vim'
-Plugin 'FelikZ/ctrlp-py-matcher'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'terryma/vim-expand-region'
+
 if $IS_REMOTE
-  Plugin 'safetydank/vim-gitgutter'
-else
+  Plugin 'vim-scripts/AutoComplPop'
+
+if !$IS_REMOTE
+  Plugin 'Valloric/YouCompleteMe'
   Plugin 'airblade/vim-gitgutter'
   Plugin 'tpope/vim-fugitive'
   Plugin 'rking/ag.vim'
-
-  Plugin 'kchmck/vim-coffee-script'
-  Plugin 'rizzatti/dash.vim'
 endif
 
 call vundle#end()
@@ -70,8 +60,6 @@ nmap <leader>s :nohlsearch<enter>
 
 map <Up> gk
 map <Down> gj
-imap <Up> <C-o>gk
-imap <Down> <C-o>gj
 
 " for persistent undo
 set undofile
@@ -113,12 +101,11 @@ let g:miniBufExplMapWindowNavArrows=1
 noremap <c-t> :bn<enter>
 
 " for YouCompleteMe
-let g:ycm_min_num_of_chars_for_completion=1
-let g:ycm_confirm_extra_conf=0
-set completeopt=menuone
-
-" for ctrlp
-let g:ctrlp_match_func={'match':'pymatcher#PyMatch'}
+if !$IS_REMOTE
+  let g:ycm_min_num_of_chars_for_completion=1
+  let g:ycm_confirm_extra_conf=0
+  set completeopt=menuone
+endif
 
 " for vim-airline
 set laststatus=2
@@ -126,12 +113,6 @@ set laststatus=2
 " for vim-expand-region
 map h <Plug>(expand_region_shrink)
 map l <Plug>(expand_region_expand)
-
-" for dash
-if !$IS_REMOTE
-  noremap <leader>k :Dash<enter>
-  noremap <leader>K :Dash!<enter>
-endif
 
 " other settings
 noremap L <c-w><c-w>
@@ -145,6 +126,8 @@ cmap w!! w !sudo tee % >/dev/null
 set so=2
 
 if $IS_REMOTE
+  set tags=~/www/tags
+  map <c-k> :HackType<enter>
   highlight OverLength ctermbg=red ctermfg=white guibg=#592929
   match OverLength /\%81v.\+/
 endif
