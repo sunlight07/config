@@ -1,7 +1,8 @@
 __sed_here_plz__
 
 if [ $IS_REMOTE = 1 ]; then
-  source "$ADMIN_SCRIPTS/master.zshrc"
+  source "/mnt/vol/engshare/admin/scripts/master.zshrc"
+  source "$ADMIN_SCRIPTS/scm-prompt"
 fi
 
 ZSH=~/.oh-my-zsh
@@ -35,3 +36,12 @@ alias -s zip='unzip -x'
 alias -s rar='unrar x'
 alias -s 7z='7z x'
 alias vi='vim'
+
+if [ $IS_REMOTE = 1 ]; then
+  setopt HIST_IGNORE_ALL_DUPS
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+  alias hhh='hphpd -h localhost'
+  alias hhh2='hphpd -h localhost --debug-sandbox 2'
+  alias hhh3='hphpd -h localhost --debug-sandbox 3'
+fi
