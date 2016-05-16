@@ -23,8 +23,7 @@ Plugin 'terryma/vim-expand-region'
 
 if $IS_REMOTE
   Plugin 'vim-scripts/AutoComplPop'
-
-if !$IS_REMOTE
+else
   Plugin 'Valloric/YouCompleteMe'
   Plugin 'airblade/vim-gitgutter'
   Plugin 'tpope/vim-fugitive'

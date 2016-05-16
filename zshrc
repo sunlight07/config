@@ -1,4 +1,4 @@
-__sed_here_plz__
+export IS_REMOTE=0
 
 if [ $IS_REMOTE = 1 ]; then
   source "$ADMIN_SCRIPTS/master.zshrc"
