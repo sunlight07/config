@@ -45,3 +45,15 @@ if [ $IS_REMOTE = 1 ]; then
   alias hhh2='hphpd -h localhost --debug-sandbox 2'
   alias hhh3='hphpd -h localhost --debug-sandbox 3'
 fi
+
+alias mm='mosh -6 DEVSERVER -- tmux'
+
+export ANDROID_SDK=/opt/android_sdk
+export ANDROID_NDK_REPOSITORY=/opt/android_ndk
+
+export ANDROID_NDK=${ANDROID_NDK_REPOSITORY}/r17fb2
+export ANDROID_NDK_HOME=${ANDROID_NDK}
+export ANDROID_HOME=${ANDROID_SDK}
+
+export PATH=${ANDROID_SDK}/tools:${ANDROID_SDK}/tools/bin:${ANDROID_SDK}/platform-tools:${PATH}
+export PATH=${ANDROID_SDK}/build-tools/29.0.2:${PATH}
